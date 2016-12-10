@@ -8,12 +8,12 @@ void main(void)
 			 WDTCTL = WDTPW | WDTHOLD;
 
 			 P1SEL |=BIT1;
-			 P1DIR &=~(BIT1); //set button to input
-			 P1REN|=BIT1;     //enable pull-up resistor
-			 P1OUT|=BIT1;
-			 P1IE |=BIT1;     //enable interrupt on Port 2.1
-			 P1IES |=BIT1;    //set as falling edge
-			 P1IFG &=~(BIT1); //clear interrupt flag
+			 P2DIR &=~(BIT1); //set button to input
+			 P2REN|=BIT1;     //enable pull-up resistor
+			 P2OUT|=BIT1;
+			 P2IE |=BIT1;     //enable interrupt on Port 2.1
+			 P2IES |=BIT1;    //set as falling edge
+			 
 
 			 TA0CTL = TASSEL_1+MC_2+ID__8; //Timer A source ACLK
 
